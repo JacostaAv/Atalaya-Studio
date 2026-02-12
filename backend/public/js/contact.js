@@ -16,7 +16,7 @@ form.addEventListener("submit", async (e) => {
     }
 
     try {
-        const res = await fetch("/api/contacto", {   // ← CAMBIO AQUÍ
+        const res = await fetch("https://atalaya-studio-1.onrender.com/api/contacto", {   // ← CAMBIO AQUÍ
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
