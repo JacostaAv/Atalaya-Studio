@@ -10,7 +10,7 @@ app.use(cors({
     allowedHeaders: ["Content-Type"]
 }));
 
-app.options("*", cors());
+app.options("/api/contacto", cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
