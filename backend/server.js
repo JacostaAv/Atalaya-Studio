@@ -4,18 +4,14 @@ const path = require("path");
 const app = express();
 const cors = require("cors");
 
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Servir archivos estáticos
-//app.use(express.static(path.join(__dirname, "public")));
-
 app.use(cors({
-    origin: "https://atalaya-studio.vercel.app/",  // URL del frontend en Vercel
+    origin: "https://atalaya-studio.vercel.app",  // URL del frontend en Vercel
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"]
 }));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Ruta POST para guardar mensajes
 app.post("/api/contacto", (req, res) => {
@@ -77,10 +73,6 @@ app.get("/messages", (req, res) => {
 
     res.send(html);
 });
-
-//app.get("*", (req, res) => {
-//    res.sendFile(path.join(__dirname, "public", "index.html"));
-//});
 
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
