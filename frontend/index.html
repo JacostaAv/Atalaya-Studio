@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Atalaya Studio</title>
+    <style>
+        a, button { padding: 12px 16px; display: inline-block; }
+
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; }
+
+        .menu { display: flex; gap: 16px; }
+        .menu li a { margin: 4px 0; }
+
+        input, textarea { padding: 12px; margin-bottom: 12px; width: 100%; max-width: 350px; }
+        button { padding: 14px 20px; font-size: 1rem; cursor: pointer; }
+
+        #servicios article { display: grid; gap: 8px; }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="/" class="logo">Atalaya</a>
+        <button id="btnMenu">Menú</button>
+        <ul class="menu" id="menu">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section id="servicios">
+        <h2>Servicios</h2>
+        <article>
+            <h3>Diseño UX/UI</h3>
+            <p>Experiencias digitales centradas en el usuario.</p>
+        </article>
+    </section>
+
+    <section id="testimonios">
+        <h2>Testimonios</h2>
+        <article>
+            <h3>Mariana Pérez</h3>
+            <p>“El equipo de Atalaya transformó por completo nuestra plataforma digital.”</p>
+        </article>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+
+        <form id="contactForm">
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre">
+            <input type="email" id="email" name="email" placeholder="Correo">
+            <textarea id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <!-- El script necesita este ID -->
+        <p id="status"></p>
+
+    </section>
+
+</main>
+
+<footer>© 2025 Atalaya Studio</footer>
+
+<script type="module" src="./js/contact.js"></script>
+</body>
+</html>
+
