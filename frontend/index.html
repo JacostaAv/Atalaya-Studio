@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atalaya Studio</title>
+
+    <!-- Tipografía limpia -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos principales -->
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
-        <a href="/" class="logo">Atalaya</a>
-        <button id="btnMenu">Menú</button>
+<header class="header">
+    <nav class="nav">
+        <a href="/" class="logo">Atalaya Studio</a>
+
+        <button class="btnMenu" id="btnMenu">☰</button>
+
         <ul class="menu" id="menu">
+            <li><a href="#inicio">Inicio</a></li>
             <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#valores">Valores</a></li>
             <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
@@ -22,42 +34,127 @@
 
 <main>
 
-    <section id="servicios">
-        <h2>Servicios</h2>
-        <article>
-            <h3>Diseño UX/UI</h3>
-            <p>Experiencias digitales centradas en el usuario.</p>
-        </article>
+    <!-- HERO / INICIO -->
+    <section id="inicio" class="hero">
+        <h1>Diseño estratégico para marcas con propósito</h1>
+        <p>Transformamos ideas en experiencias digitales claras, efectivas y memorables.</p>
+        <a href="#servicios" class="btn-primario">Conoce nuestros servicios</a>
     </section>
 
-    <section id="testimonios">
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section">
+        <h2>Servicios</h2>
+
+        <div class="grid">
+            <article class="card">
+                <h3>Diseño UX/UI</h3>
+                <p>Interfaces centradas en el usuario, pensadas para claridad, accesibilidad y conversión.</p>
+            </article>
+
+            <article class="card">
+                <h3>Branding Digital</h3>
+                <p>Construimos identidades sólidas alineadas con la esencia de tu proyecto.</p>
+            </article>
+
+            <article class="card">
+                <h3>Prototipado</h3>
+                <p>Creación de prototipos navegables para pruebas tempranas y mejoras rápidas.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="section alt">
+        <h2>Nuestro Proceso</h2>
+
+        <div class="steps">
+            <div class="step">
+                <span class="step-number">1</span>
+                <h4>Descubrimiento</h4>
+                <p>Entendemos tu contexto, objetivos y necesidades reales.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <h4>Diseño</h4>
+                <p>Diseñamos soluciones claras, funcionales y alineadas con tu público.</p>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <h4>Implementación</h4>
+                <p>Convertimos el diseño en una experiencia real y optimizada.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALORES -->
+    <section id="valores" class="section">
+        <h2>Valores</h2>
+
+        <div class="grid">
+            <article class="card small">
+                <h3>Claridad</h3>
+                <p>Comunicación limpia y directa para un impacto real.</p>
+            </article>
+
+            <article class="card small">
+                <h3>Consistencia</h3>
+                <p>El diseño como lenguaje unificado y coherente.</p>
+            </article>
+
+            <article class="card small">
+                <h3>Funcionalidad</h3>
+                <p>Todo lo que se diseña cumple un propósito claro.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="section alt">
         <h2>Testimonios</h2>
-        <article>
+
+        <article class="testimonio">
             <h3>Mariana Pérez</h3>
             <p>“El equipo de Atalaya transformó por completo nuestra plataforma digital.”</p>
         </article>
+
+        <article class="testimonio">
+            <h3>Esteban López</h3>
+            <p>“Su proceso fue claro, profesional y orientado a resultados desde el inicio.”</p>
+        </article>
     </section>
 
-    <section id="contacto">
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
         <h2>Contacto</h2>
 
-        <form id="contactForm">
+        <form id="contactForm" class="formulario">
             <input type="text" id="nombre" name="nombre" placeholder="Nombre">
             <input type="email" id="email" name="email" placeholder="Correo">
             <textarea id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
-            <button type="submit">Enviar</button>
+            <button type="submit" class="btn-primario">Enviar</button>
         </form>
 
-        <!-- El script necesita este ID -->
-        <p id="status"></p>
-
+        <p id="status" class="status"></p>
     </section>
 
 </main>
 
-<footer>© 2025 Atalaya Studio</footer>
+<footer class="footer">
+    © 2025 Atalaya Studio — Diseño estratégico y desarrollo digital
+</footer>
 
 <script type="module" src="./js/contact.js"></script>
+<script>
+    // Menú móvil
+    const btnMenu = document.getElementById("btnMenu");
+    const menu = document.getElementById("menu");
+
+    btnMenu.addEventListener("click", () => {
+        menu.classList.toggle("activo");
+    });
+</script>
+
 </body>
 </html>
-
